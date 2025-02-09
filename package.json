@@ -1,0 +1,57 @@
+{
+  "name": "@rosetta/ui",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/rosetta-core.umd.cjs",
+  "module": "./dist/rosetta-core.js",
+  "exports": {
+    ".": {
+      "import": "./dist/rosetta-ui.js",
+      "require": "./dist/rosetta-ui.umd.cjs"
+    },
+    "./dist/rosetta-core.css": "./dist/rosetta-core.css"
+  },
+  "sideEffect": false,
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "prepublish": "npm run build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@tailwindcss/vite": "^4.0.5",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "jsdom": "^26.0.0",
+    "tailwind-merge": "^3.0.1",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.22.0",
+    "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.5"
+  }
+}
